@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: email-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: email-app
+  template:
+    metadata:
+      labels:
+        app: email-app
+    spec:
+      containers:
+        - name: backend
+          image: rosh2912/email-app
+          ports:
+            - containerPort: 3000
+        - name: mongo
+          image: mongo
+          ports:
+            - containerPort: 27017
