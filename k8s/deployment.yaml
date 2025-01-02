@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: rosh2912/email-app
+          image: rosh2912/email-app:latest
           ports:
             - containerPort: 3000
         - name: mongo
